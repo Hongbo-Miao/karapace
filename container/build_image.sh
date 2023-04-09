@@ -47,6 +47,7 @@ sudo docker build \
     --build-arg "CREATED=$created" \
     --build-arg "VERSION=$version" \
     --build-arg "COMMIT=$COMMIT" \
+    --build-arg "KARAPACE_VERSION=$version" \
     --tag "karapace:${TAG_NAME}" \
     --file container/Dockerfile \
     "${code_checkout}"

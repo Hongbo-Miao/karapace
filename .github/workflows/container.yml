@@ -44,6 +44,7 @@ jobs:
           docker build . --file container/Dockerfile \
               --build-arg "CREATED=$(date --rfc-3339=seconds)" \
               --build-arg "VERSION=$(git describe --always)" \
+              --build-arg "KARAPACE_VERSION=$(git describe --always)" \
               --build-arg "COMMIT=$(git rev-parse -q --verify HEAD^{commit})" \
               --tag $IMAGE_ID:$VERSION
 

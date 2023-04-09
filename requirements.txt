@@ -20,10 +20,8 @@ watchfiles==0.19.0
 # - The contents of the file change, which invalidates the existing docker
 #   images and forces a new image generation.
 #
-git+https://github.com/aiven/kafka-python.git@1b95333c9628152066fb8b1092de9da0433401fd
-
-git+https://github.com/aiven/avro.git@f37a4ea69560d798cc718fccd7f75223527f5ebb#subdirectory=lang/py
-
+https://github.com/aiven/kafka-python/archive/1b95333c9628152066fb8b1092de9da0433401fd.tar.gz
+https://github.com/aiven/avro/archive/f37a4ea69560d798cc718fccd7f75223527f5ebb.tar.gz#subdirectory=lang/py
 
 # Indirect dependencies
 aiosignal==1.2.0 # aiohttp
