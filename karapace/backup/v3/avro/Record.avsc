@@ -1,0 +1,53 @@
+{
+  "type": "record",
+  "name": "Record",
+  "fields": [
+    {
+      "name": "key",
+      "type": [
+        "bytes",
+        "null"
+      ]
+    },
+    {
+      "name": "value",
+      "type": [
+        "bytes",
+        "null"
+      ]
+    },
+    {
+      "name": "headers",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Header",
+          "fields": [
+            {
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "name": "value",
+              "type": "bytes"
+            }
+          ]
+        },
+        "name": "header"
+      }
+    },
+    {
+      "name": "partition",
+      "type": "int"
+    },
+    {
+      "name": "offset",
+      "type": "long"
+    },
+    {
+      "name": "timestamp_ms",
+      "type": "long"
+    }
+  ]
+}

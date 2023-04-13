@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "name": "Metadata",
+  "fields": [
+    {
+      "name": "version",
+      "type": "int"
+    },
+    {
+      "name": "tool_name",
+      "type": "string"
+    },
+    {
+      "name": "tool_version",
+      "type": "string"
+    },
+    {
+      "name": "created_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "estimated_record_count",
+      "type": "long"
+    },
+    {
+      "name": "topic_name",
+      "type": "string"
+    },
+    {
+      "name": "topic_id",
+      "type": [
+        {
+          "type": "string",
+          "logicalType": "uuid"
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "partition_count",
+      "type": "int"
+    }
+  ]
+}

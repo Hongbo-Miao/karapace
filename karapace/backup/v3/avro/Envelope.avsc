@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "Envelope",
+  "fields": [
+    {
+      "name": "record",
+      "type": "bytes"
+    },
+    {
+      "name": "checksum",
+      "type": "bytes"
+    }
+  ]
+}

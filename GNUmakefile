@@ -75,3 +75,9 @@ cleaner: clean
 .PHONY: cleanest
 cleanest: cleaner
 	rm -fr '$(VENV_DIR)'
+
+
+.PHONY: avro
+schema: against := main
+schema:
+	python3 -m karapace.backup.v3.schema_tool --against=$(against)

@@ -416,6 +416,14 @@ class SchemaBackup:
             record_count = 0
 
             fp.write(version.marker)
+            backend.store_metadata(
+                buffer=fp,
+                topic_name=topic,
+                topic_id=None,
+                # fixme
+                estimated_record_count=0,
+                partition_count=1,
+            )
             if start_offset < end_offset:  # non-empty topic
                 end_offset -= 1  # high watermark to actual end offset
                 print(

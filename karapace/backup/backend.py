@@ -12,6 +12,7 @@ from typing_extensions import TypeAlias
 import abc
 import dataclasses
 import logging
+import uuid
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +77,19 @@ class BaseItemsBackupReader(BaseBackupReader[IO[str]]):
 
 
 class BaseBackupProducer(abc.ABC, Generic[B]):
+    # pylint: disable=unused-argument
+
+    @classmethod
+    def store_metadata(
+        cls,
+        buffer: B,
+        topic_name: str,
+        topic_id: uuid.UUID | None,
+        estimated_record_count: int,
+        partition_count: int,
+    ) -> None:
+        ...
+
     @classmethod
     @abc.abstractmethod
     def store_record(
